@@ -1,38 +1,82 @@
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: #576072;
+ 
 }
 
-.App-link {
-  color: #61dafb;
+.App::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  /*background-color: #ffd21e;*/
+  background: linear-gradient(rgba(113, 137, 255, 0.467),rgba(255, 157, 65, 0.4));
+  clip-path: circle(30% at right 90%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  /*background-color: #ffd21e;*/
+  background: linear-gradient(rgba(113, 137, 255, 0.467),rgba(255, 157, 65, 0.4));
+  clip-path: circle(20% at 5% 10%);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  color: rgb(229, 234, 238);
+  justify-content:flex-start;
+  align-items: center;
+  width: 40%;
+  height: 40%;
+  background-color: rgba(162, 165, 179, 0.467);
+  border-radius: 5px;
+  backdrop-filter: blur(3px);
+  box-shadow: 13px 15px 18px 0px rgba(34, 60, 80, 0.2);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.togglebutton {
+  color: rgb(213, 230, 242);
+  width: 48%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  border-bottom: 2px;
+  border-bottom-style: solid;
+  border-color: transparent;
+  transition: 0.3s;
+}
+
+.togglebutton:hover {
+  background-color: rgba(105, 113, 144, 0.467);
+}
+
+.togglebutton:active {
+  background-color: rgba(95, 105, 143, 0.467);
+}
+
+.togglebutton__border {
+  border-color: rgba(255, 157, 65, 0.8);
 }

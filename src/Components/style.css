@@ -1,0 +1,56 @@
+.card-cont {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.custombutton {
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    color: rgb(240, 240, 240);
+    background-color: rgb(75, 149, 224);
+    border: 0px;
+}
+
+.custombutton__email {
+    height: 30px;
+    margin-left: 10px;
+}
+
+.custombutton:hover {
+    background-color: rgb(65, 131, 198);
+}
+
+.custombutton:active {
+    background-color: rgb(53, 105, 158);
+}
+
+.custominput {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.734);
+    border: 0px;
+}
+
+.email-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.custominput:focus, input:focus{
+    outline: none;
+}
+
+.correct {
+    color: rgb(166, 249, 166);
+}
+
+.wrong {
+    color: rgb(255, 139, 139);
+}

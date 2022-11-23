@@ -1,23 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import EmailValidation from './Components/EmailVal'
+import DownloadManager from './Components/DownloadManager'
+import { useRef, useState } from 'react';
 
 function App() {
+  const mailRef = useRef(null)
+  const fileRef = useRef(null)
+  const [curbar, setCurbar] = useState("email")
+
+  const [component, setComponent] = useState(<EmailValidation/>)
+
+  const TogleClick =(type)=> {
+    switch(type) {
+      case "email":
+        if(curbar == "email") {
+          return
+        }
+        setComponent(<EmailValidation/>)
+        fileRef.current.className="togglebutton"
+        mailRef.current.className="togglebutton togglebutton__border"
+        setCurbar("email")
+        break;
+      case "download":
+        if(curbar == "download") {
+          return;
+        }
+        setComponent(<DownloadManager/>)
+        fileRef.current.className="togglebutton togglebutton__border"
+        mailRef.current.className="togglebutton"
+        setCurbar("download")
+        break;
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="card">
+        <h2>Тестовое задание</h2>
+        <div className="card-row">
+          <div ref={mailRef} onClick={()=>TogleClick("email")} className="togglebutton togglebutton__border">Проверить E-mail</div>
+          <div ref={fileRef} onClick={()=>TogleClick("download")} className="togglebutton">Скачать файл</div>
+        </div>
+        {component}
+      </div>
     </div>
   );
 }
